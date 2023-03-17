@@ -1,25 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Visitor Counter Example</title>
+    <title>Visitor Counter</title>
   </head>
   <body>
-    <h1>Welcome to my webpage!</h1>
-    <p>This webpage has been visited <span id="visitorCount">0</span> times.</p>
-
-    <script>
-      // Initialize visitor count variable
-      let visitorCount = 0;
-
-      // Check if local storage exists
-      if (localStorage.getItem("visitorCount")) {
-        visitorCount = parseInt(localStorage.getItem("visitorCount"));
-      }
-
-      // Update visitor count
-      visitorCount++;
-      localStorage.setItem("visitorCount", visitorCount.toString());
-      document.getElementById("visitorCount").innerHTML = visitorCount;
-    </script>
+    <h1>Welcome to my page!</h1>
+    <p>This page has been visited <span id="counter">0</span> times.</p>
+    
+    <script src="counter.js"></script>
   </body>
 </html>
