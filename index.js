@@ -1,18 +1,18 @@
 // THIS SOURCE CODE I PASS IT TO LAMDBA. TEST DYNAMODB TABLE
 
 const AWS = require ('aws-sdk');
-const TABLE = "CT_Contacts"
+const TABLE = "VisitorCount"
 const dynamoDb = new AWS.DynamoDB.DocumentClient({
   region: 'us-east-1'
 });
 exports.handler = async (event) => {
  
- const _id = "id_12345";
+ const _id = "1";
  
  const params = {
    TableName: TABLE,
    Key: {
-     "UserId": _id
+     "PageName": _id
    }
  };
  
