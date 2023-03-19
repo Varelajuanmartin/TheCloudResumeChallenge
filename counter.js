@@ -5,12 +5,12 @@ const API_URL = 'https://rd0y8fbsyd.execute-api.us-east-1.amazonaws.com/dev/{pro
 fetch(API_URL)
   .then(response => response.json())
   .then(data => {
-
+    
     console.log(data); // Debugging line
-    // Update the DOM to display the current visitor count
-    const counter = document.getElementById('counter');
-    counter.textContent = data.count;
-})
+    const counter = data.Count; // Assigning the count value to the counter variable
+    const counterElement = document.getElementById('counter');
+    counterElement.textContent = counter;
+  })
   .catch(error => {
     console.error(error);
   });
