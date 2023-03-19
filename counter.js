@@ -9,7 +9,7 @@ fetch(API_URL)
     console.log(data); // Debugging line
     // Update the DOM to display the current visitor count
     const counter = document.getElementById('counter');
-    counter2.textContent = data.count;
+    counter.textContent = data.count;
 })
   .catch(error => {
     console.error(error);
