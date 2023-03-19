@@ -20,6 +20,12 @@ exports.handler = async (event) => {
     ReturnValues: 'UPDATED_NEW'
   };
   
+  // Set the CORS headers
+  const headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers': 'Content-Type'
+  };
+
   // Perform the update operation
   const result = await dynamodb.updateItem(params).promise();
   const count = result.Attributes.Count.N;

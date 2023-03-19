@@ -1,12 +1,16 @@
-// Get the counter element
-const counter = document.getElementById('counter');
+//const API_URL = 'https://rd0y8fbsyd.execute-api.us-east-1.amazonaws.com/dev ';
+const API_URL = 'https://rd0y8fbsyd.execute-api.us-east-1.amazonaws.com/dev/{proxy+} ';
 
-// Get the current count from local storage or set it to 0 if it doesn't exist
-let count = parseInt(localStorage.getItem('count')) || 0;
+// Get the current visitor count from the backend API
+fetch(API_URL)
+  .then(response => response.json())
+  .then(data => {
 
-// Increment the count and update the counter element
-count++;
-counter.innerText = count;
-
-// Save the new count to local storage
-localStorage.setItem('count', count);
+    console.log(data); // Debugging line
+    // Update the DOM to display the current visitor count
+    const counter = document.getElementById('counter');
+    counter2.textContent = data.count;
+})
+  .catch(error => {
+    console.error(error);
+  });
